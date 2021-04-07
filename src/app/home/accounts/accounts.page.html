@@ -1,0 +1,39 @@
+<app-header></app-header>
+
+<ion-content>
+  <ion-list lines="none">
+    <ion-item>
+      <h4>All Accounts</h4>
+    </ion-item>
+    <ion-item>
+      <ion-grid class="ion-no-padding">
+        <ion-row class="ion-text-center">
+          <ion-col size="8">
+              <ion-icon name="albums-outline"></ion-icon>
+              Group by memberships
+          </ion-col>
+          <ion-col (click)="showFilterOptions()">
+              <ion-icon name="filter-sharp"></ion-icon>
+              Filter
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+    </ion-item>
+    <ion-item><h4>Checking Accounts</h4></ion-item>
+    <ion-item>
+      <app-accounts-group [accounts]="checkingAccounts"></app-accounts-group>
+    </ion-item>
+    <ion-item><h4>Savings Accounts</h4></ion-item>
+    <ion-item>
+      <app-accounts-group [accounts]="savingsAccounts"></app-accounts-group>
+    </ion-item>
+    <ion-item><h4>Credit Card Account</h4></ion-item>
+    <ion-item>
+      <app-accounts-group [accounts]="creditCardAccounts"></app-accounts-group>
+    </ion-item>
+    <ion-item><h4>Loan Accounts</h4></ion-item>
+    <ion-item>
+      <app-accounts-group [accounts]="loanAccounts"></app-accounts-group>
+    </ion-item>
+  </ion-list>
+</ion-content>

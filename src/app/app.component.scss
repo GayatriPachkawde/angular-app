@@ -1,0 +1,39 @@
+ion-menu {
+  --width: 100%;
+}
+
+ion-footer {
+  height: 18%;
+}
+
+ion-footer ion-button {
+  height: 46px;
+}
+
+ion-footer ion-col {
+  color: black;
+}
+
+ion-input {
+  color: black;
+  background-color: white;
+  margin: 5%;
+  width: 90%;
+  border-radius: 10px;
+}
+
+.icons {
+  margin-bottom: 10px;
+  margin-top: 10px;
+}
+
+ion-content ion-icon {
+  padding: 5%;
+  color: var(--ion-color-primary);
+  width: 50px;
+  height: 50px;
+}
+
+ion-content ion-item {
+  color: var(--ion-color-primary);
+}

@@ -1,0 +1,77 @@
+<ion-header>
+  <ion-toolbar>
+   <ion-buttons slot="end">
+      <ion-menu-button menu="m1"></ion-menu-button>
+    </ion-buttons>
+    <ion-title>
+      Login
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-img class="logo ion-margin" src="../../assets/icon/numerica_logo.png"></ion-img>
+  <form #f="ngForm" (ngSubmit)="submitForm(f)">
+  <ion-grid>
+    <ion-row>
+      <ion-col size="10" offset="1">
+        <ion-list>
+          <ion-item class="ion-no-padding">
+            <ion-label position="floating">Username</ion-label>
+            <ion-input [value]="username" type="text" ngModel name="username" required #usernameCtrl="ngModel"></ion-input>
+          </ion-item>
+          <ion-item *ngIf="!usernameCtrl.valid && showusernameWarning" lines="none"  class="ion-no-padding">
+            <p class="ion-no-padding warning">Please enter username!</p>
+          </ion-item>
+          <ion-item class="ion-no-padding">
+            <ion-label position="floating">Password</ion-label>
+            <ion-input type="password" ngModel name="password" required #passwordCtrl="ngModel"></ion-input>
+          </ion-item>
+          <ion-item class="ion-no-padding" *ngIf="!passwordCtrl.valid && showpasswordWarning" lines="none">
+            <p class="ion-no-padding warning">Please enter password!</p>
+          </ion-item>
+        </ion-list>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col size="10" offset="1">
+        <ion-item  class="ion-no-padding" lines="none">
+          <ion-checkbox [checked]="rememberUser" #rememberCtrl></ion-checkbox>
+          <ion-label>Remember me?</ion-label>
+        </ion-item>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col size="10" offset="1">
+        <ion-button type="submit" expand="block">Login</ion-button>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</form>
+
+<ion-grid class="ion-no-padding">
+  <ion-row class="ion-text-center">
+    <ion-col>
+      <ion-text>
+        New User? Enroll Now
+      </ion-text>
+    </ion-col>
+
+    <ion-col>
+      Need help logging in?
+    </ion-col>
+  </ion-row>
+  <hr>
+</ion-grid>
+
+</ion-content>
+<ion-footer (click)="showAccountBalance()">
+   <ion-grid class="ion-no-padding">
+     <ion-row class="ion-padding">
+       <ion-col size="11">Tap to see your account balance</ion-col>
+       <ion-col size="1">
+        <ion-icon name="chevron-up-outline"></ion-icon>
+       </ion-col>
+     </ion-row>
+   </ion-grid>
+</ion-footer>
